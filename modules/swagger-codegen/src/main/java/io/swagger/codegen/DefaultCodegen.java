@@ -2211,6 +2211,8 @@ public class DefaultCodegen {
         // input name and age => input_name_and_age
         name = name.replaceAll(" ", "_");
 
+        name = name.replaceAll("^[$]$", "value");
+
         // remove everything else other than word, number and _
         // $php_variable => php_variable
         return name.replaceAll("[^a-zA-Z0-9_]", "");
